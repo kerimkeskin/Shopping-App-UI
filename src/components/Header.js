@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, Dimensions } from "react-native";
+import { StyleSheet, Text, View, Dimensions, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 const WIDTH = Dimensions.get("window").width;
@@ -16,7 +16,13 @@ const Header = () => {
           size={32}
           color="#00ffd5"
         />
-        <View style={styles.pp}></View>
+        <Image
+          source={{
+            uri:
+              "https://avatars1.githubusercontent.com/u/64541749?s=460&u=bc03569ad4c194a4da2248f681d93716475e297e&v=4",
+          }}
+          style={styles.pp}
+        />
       </View>
     </View>
   );
@@ -29,9 +35,8 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
     fontSize: 22,
-    fontWeight:'bold',
-    letterSpacing:1,
-  
+    fontWeight: "bold",
+    letterSpacing: 1,
   },
   header: {
     width: WIDTH,

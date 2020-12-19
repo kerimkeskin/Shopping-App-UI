@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  StyleSheet,
-  TouchableOpacity,
-  TextInput,
-  View,
-  Dimensions,
-} from "react-native";
+import { StyleSheet, TextInput, View, Dimensions } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
@@ -51,7 +45,6 @@ const styles = StyleSheet.create({
   textinput: {
     width: WIDTH * 0.6,
     height: HEIGHT * 0.05,
-
   },
   searchicon: {
     alignItems: "flex-start",

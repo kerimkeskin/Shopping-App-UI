@@ -10,7 +10,7 @@ import {
 import StarRating from "react-native-star-rating";
 import data from "../data/data";
 
-const ProductList = ({ route, navigation }, props) => {
+const ProductList = ({ route }) => {
   return (
     <View style={{ justifyContent: "space-around" }}>
       <Text style={styles.headertext}>POPÜLER ÜRÜNLER</Text>
@@ -64,7 +64,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.32,
     shadowRadius: 5.46,
-
     elevation: 9,
   },
   image: {

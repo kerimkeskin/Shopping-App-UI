@@ -1,9 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, View, Dimensions } from "react-native";
-import { Feather } from "@expo/vector-icons";
-import { Foundation } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
+import {
+  Feather,
+  Entypo,
+  MaterialCommunityIcons,
+  Foundation,
+} from "@expo/vector-icons";
 
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT = Dimensions.get("window").height;
