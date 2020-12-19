@@ -23,7 +23,15 @@ const ProductList = ({ route, navigation }, props) => {
         contentContainerStyle={{ alignItems: "center" }}
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() => route.navigate("Details", { image: item.image_url })}
+            onPress={() =>
+              route.navigate("Details", {
+                image_url: item.image_url,
+                product_name: item.product_name,
+                star: item.star,
+                description: item.description,
+                price: item.price,
+              })
+            }
             style={styles.Imagecontainer}
           >
             <Image source={{ uri: item.image_url }} style={styles.image} />
