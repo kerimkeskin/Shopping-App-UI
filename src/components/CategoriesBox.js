@@ -1,10 +1,15 @@
 import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
-import { Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
+import {
+  Entypo,
+  MaterialCommunityIcons,
+  FontAwesome5,
+  FontAwesome,
+} from "@expo/vector-icons";
 
 const CategoriesBox = () => {
   return (
-    <View >
+    <View>
       <Text style={styles.header}>KATEGORİLER</Text>
       <ScrollView
         horizontal
@@ -34,7 +39,34 @@ const CategoriesBox = () => {
           <Text style={styles.text}>Konsollar</Text>
         </View>
       </ScrollView>
-      <View style={styles.bottomtabcontainer}></View>
+      <View style={styles.bottomtabcontainer}>
+        <View style={styles.bottomtab}>
+          <Entypo
+            style={styles.bottomicon}
+            name="home"
+            size={30}
+            color="#00ffd5"
+          />
+          <FontAwesome5
+            style={styles.bottomicon}
+            name="shopping-cart"
+            size={30}
+            color="#384265"
+          />
+          <FontAwesome
+            style={styles.bottomicon}
+            name="heart"
+            size={30}
+            color="#384265"
+          />
+          <FontAwesome
+            style={styles.bottomicon}
+            name="user-circle"
+            size={30}
+            color="#384265"
+          />
+        </View>
+      </View>
     </View>
   );
 };
@@ -66,7 +98,21 @@ const styles = StyleSheet.create({
   },
   bottomtabcontainer: {
     width: "100%",
-    height:120
+    height: 120,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  bottomtab: {
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    borderRadius: 30,
+    backgroundColor: "#151c36",
+    width: "90%",
+    height: 70,
+  },
+  bottomicon: {
+    marginHorizontal: 30,
   },
 });
 
