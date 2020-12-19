@@ -2,18 +2,20 @@ import React from "react";
 import { StyleSheet, View, SafeAreaView } from "react-native";
 import Header from "../components/Header";
 import SearchBox from "../components/SearchBox";
-import Categories from "../components/Categories";
+import CategoriesCard from "../components/CategoriesCard";
+import CategoriesBox from "../components/CategoriesBox";
 import ProductList from "../components/ProductList";
 
-const HomeScreen = () => {
+const HomeScreen = (props) => {
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.bar}>
         <Header />
         <SearchBox />
-        <Categories />
+        <CategoriesCard />
       </SafeAreaView>
-      <ProductList />
+      <ProductList route={props.navigation} />
+      <CategoriesBox />
     </View>
   );
 };

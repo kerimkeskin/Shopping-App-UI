@@ -1,9 +1,16 @@
 import React from "react";
-import { StyleSheet, Text, View, FlatList, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import StarRating from "react-native-star-rating";
 import data from "../data/data";
 
-const ProductList = () => {
+const ProductList = ({ route, navigation }, props) => {
   return (
     <View style={{ justifyContent: "space-around" }}>
       <Text style={styles.headertext}>POPÜLER ÜRÜNLER</Text>
@@ -15,10 +22,13 @@ const ProductList = () => {
         snapToAlignment="center"
         contentContainerStyle={{ alignItems: "center" }}
         renderItem={({ item }) => (
-          <View style={styles.Imagecontainer}>
-            <Image source={{ uri: `${item.image_url}` }} style={styles.image} />
+          <TouchableOpacity
+            onPress={() => route.navigate("Details", { image: item.image_url })}
+            style={styles.Imagecontainer}
+          >
+            <Image source={{ uri: item.image_url }} style={styles.image} />
             <Text style={{ textAlign: "center", fontWeight: "bold" }}>
-              {item.product_name}{" "}
+              {item.product_name}
             </Text>
             <View style={styles.rating}>
               <StarRating
@@ -30,7 +40,7 @@ const ProductList = () => {
               />
               <Text style={{ fontSize: 11, padding: 3 }}>{item.star}/5</Text>
             </View>
-          </View>
+          </TouchableOpacity>
         )}
       />
     </View>
@@ -56,7 +66,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   headertext: {
-    fontSize: 22,
+    fontSize: 16,
     fontWeight: "bold",
     letterSpacing: 1,
     margin: 10,
