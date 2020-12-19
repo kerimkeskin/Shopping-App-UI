@@ -1,7 +1,5 @@
 # Shopping-App-UI
 
-# Wallet-App-UI
-
 ![GitHub Logo](/mockup/1.png)
 ![GitHub Logo](/mockup/2.png)
 
