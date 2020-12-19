@@ -1,6 +1,13 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
+import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 import StarRating from "react-native-star-rating";
 
 const Width = Dimensions.get("window").width;
@@ -24,14 +31,14 @@ const DetailsScreen = ({ route }) => {
             source={{ uri: image_url }}
             style={styles.image}
           />
-          <View style={styles.iconcontainer}>
+          <TouchableOpacity style={styles.iconcontainer}>
             <FontAwesome
               style={styles.bottomicon}
               name="heart"
               size={30}
               color="#384265"
             />
-          </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.headercontainer}>
           <Text style={styles.headertext}>{product_name}</Text>
@@ -63,6 +70,30 @@ const DetailsScreen = ({ route }) => {
           {description}
         </Text>
       </View>
+
+      <View style={styles.footer}>
+        <TouchableOpacity
+          style={{ flexDirection: "row", alignItems: "center" }}
+        >
+          <FontAwesome5
+            style={styles.bottomicon}
+            name="shopping-cart"
+            size={30}
+            color="#00ffd5"
+          />
+          <Text
+            style={[
+              styles.buttontext,
+              { color: "#00ffd5", fontWeight: "300", marginHorizontal: 5 },
+            ]}
+          >
+            Sepete Ekle
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttontext}>Şimdi Satın Al</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -74,8 +105,8 @@ const styles = StyleSheet.create({
   image: {
     width: Width,
     height: Height * 0.4,
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
   },
   iconcontainer: {
     position: "absolute",
@@ -104,8 +135,27 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     letterSpacing: 1,
     textAlign: "center",
-    color: 32,
     color: "black",
+  },
+  footer: {
+    flex: 1,
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  button: {
+    width: 150,
+    borderRadius: 15,
+    height: 40,
+    backgroundColor: "#00ffd5",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttontext: {
+    fontSize: 15,
+    fontWeight: "500",
+    justifyContent: "space-around",
+    textAlign: "center",
   },
 });
 
